@@ -1,0 +1,17 @@
+﻿{
+  "service_url": "http://127.0.0.1:8765",
+  "user_id": "user_001",
+  "request_timeout_seconds": 60,
+  "recall_min_items": 0,
+  "recall_max_items": 5,
+  "recall_max_chars": 4000,
+  "recent_session_limit": 3,
+  "history_per_session": 20,
+  "checkpoint_max_field_chars": 800,
+  "tool_summary_max_chars": 700,
+  "state_dir": ".codex/memory-state",
+  "platform_default": "PortSwigger Web Security Academy",
+  "lab_default": "未识别靶场",
+  "auto_consolidate": false,
+  "success_evidence_name_pattern": "(?i)(solved|success|proof|evidence|完成|成功|验证)"
+}

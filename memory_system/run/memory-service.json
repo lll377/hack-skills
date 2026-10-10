@@ -1,0 +1,12 @@
+{
+  "pid": 3852,
+  "process_create_time": 1786803457.1650577,
+  "python_path": "C:\\Users\\Administrator\\Desktop\\hack-skills\\.venv\\Scripts\\python.exe",
+  "script_path": "C:\\Users\\Administrator\\Desktop\\hack-skills\\memory_system\\run.py",
+  "working_directory": "C:\\Users\\Administrator\\Desktop\\hack-skills\\memory_system",
+  "service_url": "http://127.0.0.1:8765",
+  "database_path": "C:\\Users\\Administrator\\Desktop\\hack-skills\\memory_system\\data\\memory.db",
+  "started_at": "2026-08-15T14:17:37.119619+00:00",
+  "launcher_pid": 968,
+  "launcher_create_time": 1786803457.117967
+}

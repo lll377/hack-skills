@@ -1,0 +1,55 @@
+# runtime junk — do not re-commit
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+.idea/
+.vscode/
+
+# browser / agent session state
+browser_profiles/
+tools/chrome-profile-copy/
+tools/edge-cdp-profile/
+.codex/memory-state/
+
+# hunt workspace (targets, reports, cookies)
+/works/
+
+# hunt artifacts
+evidence/
+logs/
+analysis/
+skills/results/
+tools/results/
+tools/downloads/
+memory_system/results/
+memory_system/logs/
+memory_system/data/*.db
+memory_system/data/*.sqlite3
+*.log
+*.log.*
+*.pid
+
+# extracted / downloaded binaries
+tools/php-*/
+tools/ruby-*/
+tools/chrome-devtools-mcp/
+tools/burp-mcp-check/
+tools/burp-mcp-server-extract-*/
+tools/burp-mcp-temp-run/
+tools/burp_ext_test*/
+tools/burp_loadcheck_debug/
+*.jar.bak
+*.jar.old*
+*.zip
+
+# editor / patch leftovers
+*.bak
+*.bak_*
+*~
+
+# original yaklang leftovers (this repo forked from hack-skills)
+*.yakc
+vendor/
+node_modules/

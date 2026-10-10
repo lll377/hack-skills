@@ -1,0 +1,15 @@
+services:
+  memory:
+    build: .
+    ports:
+      - "127.0.0.1:8765:8765"
+    environment:
+      MEMORY_OPENAI_API_KEY: ${MEMORY_OPENAI_API_KEY:-sk-EHjIqJw1WnWPZP9OTR4eWXysrXL7A4mrpmVhWYAenAsG9aNb}
+      MEMORY_OPENAI_BASE_URL: ${MEMORY_OPENAI_BASE_URL:-https://api.ntrapi.cn/v1}
+      MEMORY_OPENAI_MODEL: ${MEMORY_OPENAI_MODEL:-gpt-5.4}
+    volumes:
+      - memory-data:/data
+    restart: unless-stopped
+
+volumes:
+  memory-data:

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>聊天层</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">C</span>
+      <div><strong>聊天层</strong><span>不写入挖洞账本</span></div>
+    </div>
+    <div class="identity-controls">
+      <label>用户<input id="userId" value="user_001" maxlength="100"></label>
+      <label>会话<input id="sessionId" value="session_001" maxlength="100"></label>
+      <button id="newSession" class="icon-button" title="新建会话" aria-label="新建会话">＋</button>
+    </div>
+    <div class="status"><i id="statusDot"></i><span id="statusText">连接中</span></div>
+  </header>
+  <main class="workspace">
+    <aside class="layer-rail" aria-label="记忆层状态">
+      <div class="rail-title">记忆层</div>
+      <button class="layer active" data-layer="instant"><span>01</span><b>瞬时记忆</b><small id="countInstant">0 条</small></button>
+      <button class="layer" data-layer="working"><span>02</span><b>工作记忆</b><small id="countWorking">0 条</small></button>
+      <button class="layer" data-layer="short"><span>03</span><b>短时向量</b><small id="countShort">0 条</small></button>
+      <button class="layer" data-layer="long"><span>04</span><b>长期图谱</b><small id="countLong">0 联结</small></button>
+      <div class="rail-actions">
+        <button id="consolidateBtn" class="secondary">巩固聊天记忆</button>
+        <button id="clearBtn" class="danger">清空聊天层</button>
+      </div>
+    </aside>
+    <section class="conversation">
+      <div class="section-head">
+        <div><h1>当前会话</h1><p id="sessionLabel">session_001</p></div>
+        <span id="encodingBadge" class="badge">等待输入</span>
+      </div>
+      <div id="messages" class="messages" aria-live="polite">
+        <div class="empty-state">
+          <strong>聊天层已就绪</strong>
+          <span>这里的对话不会进入 AI 挖洞 recall。挖洞经验请看首页账本。</span>
+        </div>
+      </div>
+      <form id="chatForm" class="composer">
+        <textarea id="messageInput" rows="2" maxlength="16000" placeholder="输入消息…" required></textarea>
+        <div class="composer-row">
+          <label class="visual-input">视觉描述<input id="imageInput" placeholder="可选"></label>
+          <button id="sendBtn" type="submit" class="primary">发送 <span aria-hidden="true">↗</span></button>
+        </div>
+      </form>
+    </section>
+    <aside class="inspector">
+      <div class="section-head compact">
+        <div><h2>聊天观测</h2><p>与账本无关</p></div>
+        <button id="refreshBtn" class="icon-button" title="刷新" aria-label="刷新">↻</button>
+      </div>
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="short" role="tab">短时</button>
+        <button class="tab" data-tab="graph" role="tab">图谱</button>
+        <button class="tab" data-tab="events" role="tab">加工日志</button>
+      </div>
+      <div id="shortPanel" class="tab-panel active"><div id="shortMemories" class="memory-list"></div></div>
+      <div id="graphPanel" class="tab-panel"><canvas id="graphCanvas"></canvas><div id="graphLegend" class="graph-legend"></div></div>
+      <div id="eventsPanel" class="tab-panel"><div id="eventList" class="event-list"></div></div>
+    </aside>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>

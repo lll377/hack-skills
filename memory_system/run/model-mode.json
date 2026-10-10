@@ -1,0 +1,5 @@
+{
+  "enabled": false,
+  "model": "gpt-5.4",
+  "base_url": "https://api.ntrapi.cn/v1"
+}

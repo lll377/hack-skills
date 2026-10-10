@@ -1,0 +1,8 @@
+#!/bin/zsh
+# Homebrew Python on this Mac needs brew libexpat, not the system one.
+export DYLD_LIBRARY_PATH="/opt/homebrew/opt/expat/lib${DYLD_LIBRARY_PATH:+:$DYLD_LIBRARY_PATH}"
+ROOT="/Users/l/Desktop/Grok/hack-skills"
+if [[ -x "$ROOT/.venv/bin/python" ]]; then
+  exec "$ROOT/.venv/bin/python" "$@"
+fi
+exec /opt/homebrew/bin/python3.12 "$@"

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18211f">
+  <title>挖洞记忆</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar ledger-top">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <div><strong>挖洞记忆</strong><span>与 AI 同一本账：experience.jsonl</span></div>
+    </div>
+    <div class="status"><i id="statusDot"></i><span id="statusText">连接中</span></div>
+  </header>
+
+  <main class="ledger-page">
+    <aside class="ledger-rail">
+      <div class="stat-grid">
+        <div class="stat"><b id="countAll">0</b><span>全部</span></div>
+        <div class="stat"><b id="countPos">0</b><span>打法</span></div>
+        <div class="stat neg"><b id="countNeg">0</b><span>证伪</span></div>
+      </div>
+      <label class="filter">搜索<input id="q" placeholder="pin、缓存、越权…"></label>
+      <label class="filter">Skill
+        <select id="skill"><option value="">全部 skill</option></select>
+      </label>
+      <div id="skillList" class="skill-list"></div>
+      <label class="filter">类型
+        <select id="kind">
+          <option value="all">打法 + 证伪</option>
+          <option value="positive">只看打法</option>
+          <option value="negative">只看证伪</option>
+        </select>
+      </label>
+      <button id="refreshBtn" class="secondary">刷新</button>
+      <p class="hint">人看这些字段即可：Trigger（何时用）、Steps（怎么打）、Oracle（怎样算打成）。Skill 是只读手册；可写的只有这份账本。聊天层不进挖洞。</p>
+    </aside>
+    <section class="ledger-list-wrap">
+      <div class="section-head">
+        <div><h1>经验账本</h1><p id="sourceLabel">experience.jsonl</p></div>
+        <span id="resultBadge" class="badge">0 条</span>
+      </div>
+      <div id="cards" class="ledger-cards"></div>
+    </section>
+  </main>
+
+  <details class="chat-drawer">
+    <summary>聊天层（仿生四层，不进挖洞 recall）</summary>
+    <p class="hint">这里只是旧控制台。清空聊天不会删上面的账本。</p>
+    <iframe class="chat-frame" title="旧聊天层" src="/chat.html"></iframe>
+  </details>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="/ledger.js" defer></script>
+</body>
+</html>
